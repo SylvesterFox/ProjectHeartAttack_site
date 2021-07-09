@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="{% static 'levels/css/style.css' %}">
+    <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/88019/baffle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    
+</head>
+<body>
+    <div class="page" id="page-werp">
+        <header class="header" id="header">
+            <div class="werpper">
+                    <div class="header__werpper">
+                        <div class="header__logo">
+                            <a href="{% url 'home' %}" class="logo__pic">
+                                <img src="{% static 'levels/img/svg/logo_pha.svg' %}" alt="Project" class="img__logo">
+                            </a>
+                        </div>
+    
+                        <div class="nav_menu">
+                            <nav class="header__navigation">
+                                <ul class="header__list">
+                                    <li class="header_item">
+                                        <a href="{% url 'newlevels' %}" class="header__link">[New levels]</a>
+                                    </li>
+                                    <li class="header_item">
+                                        <a href="#!" class="header__link">[Top levels]</a>
+                                    </li>
+                                    <li class="header_item">
+                                        <a href="#!" class="header__link">[Search]</a>
+                                    </li>
+                                    <li class="header_item">
+                                        <a href="#!" class="header__link">[Manage Accounts]</a>
+                                        <ul class=nav_accounts>
+                                            <li class="list_accounts">
+                                                <a href="" class="accounts__header" id="log_in">[Log in]</a>
+                                            </li>
+                                            <li class="list_accounts">
+                                                <a href="" class="accounts__header" id="log_in">[Sign in]</a>
+                                            </li>
+                                            <li class="list_accounts">
+                                                <a href="" class="accounts__header" id="log_in">[Settings]</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+        </header>
+        <main class="levelinfo_main">
+            <div class="werpper">
+                <div class="werpper_lavelinfo">
+                    <div class="linfo">
+                        <div class="image_levelw">
+                            {% if levels.preview %}
+                            <img src="{{ levels.preview.url }}" alt="lavel_info" class="image_level">
+                            {% else %}
+                            <img src="{% static 'levels/img/svg/info_levelimg.svg' %}" alt="lavel_info" class="image_level">
+                            {% endif %}
+                        </div>
+                        <div class="namelevels">
+                            <p class="levelname">{{ levels.name_level }}</p>
+                            <p class="author_level">By {{ levels.autthor_level }}</p>
+                        </div>
+                        <div class="info_level_page">
+                            <div class="info_level_rating">
+                                <p class="Rating">Rating: </p>
+                                <p class="number_rating">{{ levels.rating }}</p>
+                                <img src="{% static 'levels/img/svg/heart_ico_min.svg' %}" alt="Rating_heart" class="heart">
+                            </div>
+                            <div class="info_level_author">
+                                <p class="level_by">Level By:</p>
+                                <p class="author">void</p>
+                            </div>
+                            <div class="info_level_diffculty">
+                                <p class="diffculty">Diffculty:</p>
+                                <p class="name_diffculty">{{ levels.diffculty }}</p>
+                                <img src="{% static 'levels/img/svg/' %}{{ levels.diffculty }}_ico.svg" alt="ico_diffculty" class="diffculty_ico">
+                            </div>
+                        </div>
+                        <div class="description">
+                            <p class="title_name">Description:</p>
+                            <p class="text_description">{{ levels.content }}</p>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <div class="nav_wrap_info">
+                <ul class="nav_footer">
+                    <li class="item__footer">
+                        <a href="{{levels.levels_file.url}}" class="link__footer">[Download]</a>
+                    </li>
+                    <li class="item__footer">
+                        <a href="" class="link__footer">[Get Song]</a>
+                    </li>
+                    <li class="item__footer_left">
+                        <a href="" class="link__footer">[Comments]</a>
+                    </li>
+                </ul>
+            </div>
+        </footer>
+    </div>
+    <script src="{% static 'levels/js/shuffle_effect.js' %}"></script>
+</body>
+</html>
