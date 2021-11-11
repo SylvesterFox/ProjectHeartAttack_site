@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="css/style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="./js/header_fixed.js"></script>
+    
 </head>
 <body>
     <header class="header">
@@ -21,11 +22,44 @@
                         </div>
                     </a> 
                 </div>
-                <nav class="nav">
-                    <a class="nav__link" href="#">[ New level ]</a>
-                    <a class="nav__link" href="#">[ Top level ]</a>
-                    <a class="nav__link" href="#">[ Search ]</a>
-                    <a class="nav__link" href="#">[ Mange Accounts ]</a>
+                <nav class="nav" id="nav">
+                    <ui class="header_list">
+                        <li class="header_item">
+                            <a href="" class="nav__link">[New levels]</a>
+                        </li>
+                        <li class="header_item">
+                            <a href="" class="nav__link">[Top levels]</a>
+                        </li>
+                        <li class="header_item">
+                            <a href="" class="nav__link" >[Search]</a>
+                        </li>
+                        <li class="header_item_b">
+                            <a href="" class="nav__link" id="burger_btn">[Manage Accounts]</a>
+                            <ul class="burger__nav">
+                                <li class="list_accounts">
+                                    <a href="" class="accounts__header" id="log_in">
+                                        <div class="link__accounts">
+                                            [Log in]
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="list_accounts">
+                                    <a href="" class="accounts__header" id="log_in">
+                                        <div class="link__accounts">
+                                            [Sign in]
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="list_accounts">
+                                    <a href="" class="accounts__header" id="log_in">
+                                        <div class="link__accounts">
+                                            [Settings]
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ui>
                 </nav>
             </div>
         </div>
@@ -409,5 +443,6 @@
             </div>
         </div>
     </footer>
+    <script src="./js/burger.js"></script>
 </body>
 </html>
