@@ -21,6 +21,10 @@ body{
     overflow-x: hidden;
 }
 
+body.lock {
+    overflow: hidden;
+}
+
 *,
 *:after,
 *:before {
@@ -30,6 +34,109 @@ body{
 h1, h2, h3, h4, h5, h6 {
     margin: 0;
 }
+
+/* popup */
+
+.pop_up{
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.2);
+    z-index: 9999;
+    pointer-events: none;
+    transition: .5s;
+}
+
+.pop_up.active{
+    opacity: 100;
+}
+
+
+.pop_up_container{
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+.pop_up_body {
+    margin: auto;
+    width: 500px;
+    background-color: #e4e4e4;
+    text-align: center;
+    padding: 100px 15px 110px 15px;
+    position: relative;
+    border: #000 dashed 4px;
+}
+
+.pop_up_body p{
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+
+.pop_up_body input{
+    display: block;
+    margin: 25px auto 0px auto;
+    width: 330px;
+    height: 30px;
+    font-weight: 500;
+    font-size: 13px;
+    color: #857979;
+    border: dashed #000;
+}
+
+.pop_up_body input:focus{
+    outline: dashed 3px rgb(250, 104, 148);
+}
+
+.links_pop_up p{
+    font-size: 20px;
+    margin: 0;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.links_pop_up {
+    display: flex;
+    margin: 20px auto 0px auto;
+    justify-content: center;
+}
+
+.links_pop_up a{
+    color: rgb(250, 104, 148);
+    text-decoration: none;
+    font-size: 13px;
+    margin-top: 4px;
+}
+
+.pop_up_body button{
+    display: block;
+    width: 200px;
+    height: 30px;
+    margin: 25px auto 0px auto;
+    cursor: pointer;
+    border: dashed;
+    background-color: #C4C4C4;
+    transition: .5s;
+}
+
+.pop_up_body button:hover{
+    background-color: rgb(255, 159, 188);
+    border-color: #ff5d98;
+}
+
+.pop_up_close{
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 21px;
+    cursor: pointer;
+}
+
+/* popup end */
 
 
 /* Container */
@@ -50,7 +157,7 @@ body::-webkit-scrollbar{
 ::-webkit-scrollbar-thumb{
     background-color: #717171;
 }
-
+/* Container end */
 
 /* Header */
 .header {
@@ -60,7 +167,7 @@ body::-webkit-scrollbar{
     top: 0;
     left: 0;
     right: 0;
-    z-index: 9999;
+    z-index: 2000;
     border-bottom: black dashed 4px;
     box-shadow: 0px 6px 7px 0 rgba(0, 0, 0, 0.3);
     background-color: #e4e4e4;
@@ -125,19 +232,19 @@ body::-webkit-scrollbar{
     position: absolute;
     display: block;
     opacity: 0;
-    margin-top: 10px;
+    margin-top: 8px;
     padding: 0;
     transition: .5s;
     pointer-events: none;
-
 }
 
 .list_accounts{
     display: block;
     background-color: #C4C4C4;
-    border: black dashed 2px;
     box-shadow: 0px 6px 7px 0 rgba(0, 0, 0, 0.3);
     z-index: 5;
+    border-top: #DBDBDB outset;
+    border-bottom: #DBDBDB outset;
 }
 
 .accounts__header{
@@ -164,7 +271,6 @@ body::-webkit-scrollbar{
 }
 
 .active{
-    display: block;
     opacity: 100;
     pointer-events: auto;
 }
@@ -244,6 +350,8 @@ body::-webkit-scrollbar{
     text-decoration: none;
     color: black;
 }
+
+/* Header end */
 
 /* Main */
 
@@ -455,6 +563,8 @@ body::-webkit-scrollbar{
     
 }
 
+/* levels preview end ver.1 */
+
 /* footer */
 
 .footer{
@@ -464,7 +574,7 @@ body::-webkit-scrollbar{
     top: 100%;
     left: 0;
     right: 0;
-    z-index: 9999;
+    z-index: 3000;
     background-color: #e4e4e4;
     border-top: #000 dashed 4px;
     box-shadow: 0px -6px 7px 0 rgba(0, 0, 0, 0.3);
@@ -504,3 +614,4 @@ body::-webkit-scrollbar{
     background-color: #fff;
 }
 
+/* footer end */

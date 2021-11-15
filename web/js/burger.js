@@ -1,7 +1,8 @@
 const mb = document.querySelector('#burger_btn');
 const menu = document.querySelector('.burger__nav');
 
-mb.addEventListener('mouseover', function () {
-    menu.classList.toggle("active")
+mb.addEventListener('click', function(e) {
+    e.preventDefault();
+    menu.classList.toggle("active");
 })
 
