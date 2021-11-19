@@ -443,6 +443,7 @@ body {
     line-height: 1.2;
     font-weight: normal;
     color: #000;
+    
 }
 
 .page{
@@ -593,7 +594,7 @@ body {
   position: absolute;
   
   max-height: 500vh;
-  grid-template-rows: repeat(5, 1fr);
+  /*grid-template-rows: repeat(5, 1fr); */
   grid-template-columns: repeat(5, 1fr);
   grid-gap: 2vw;
   margin-left: 176px;
@@ -604,6 +605,7 @@ body {
 
 .image_level {
   width: 200px;
+
 }
 
 .info {
@@ -650,6 +652,20 @@ body {
   color: #ff4570
 }
 
+.not_found_context{
+  width: 100vh;
+  height: 80px;
+  font-family: Reem Kufi;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 40px;
+  text-align: center;
+  padding-left: 40px;
+  padding-right: 40px;
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
 
 /* main end */
 
@@ -672,8 +688,11 @@ body {
 
 .nav_wrap{
   display: flex;
+  flex-direction: row;
   justify-content: center;
-  margin-left: 80vh;
+  position: absolute;
+  margin-left: 35%;
+  margin-right: 50%;
 }
 
 .nav_pages {
@@ -690,6 +709,15 @@ body {
   background-color: #414141;
   transform: .5s;
   
+}
+
+.pages_item_disabled {
+  width: 30px;
+  height: 30px;
+  margin-left: 10px;
+  list-style: none;
+  background-color: #777777;
+  transform: .5s;
 }
 
 .pages_link {
@@ -717,13 +745,22 @@ body {
 .item__footer_left{
   height: 30px;
   width: 160px;
-  margin-left: 660px;
+  margin-left: 900px;
+  position: absolute;
 }
 
 .item__footer{
   height: 30px;
   width: 130px;
   margin-left: 7px;
+  position: absolute;
+}
+
+.item__footer_get_song{
+  height: 30px;
+  width: 130px;
+  margin-left: 150px;
+  position: absolute;
 }
 
 .link__footer{
@@ -923,10 +960,12 @@ body {
   display: block;
   position: absolute;
   margin-top: 220px;
-  height: 200px;
+  margin-bottom: 60px;
+  height: 400px;
   width: 110vh;
   padding: 10px;
   border: 5px dashed black;
+  max-height: 900px;
 }
 
 .title_name{

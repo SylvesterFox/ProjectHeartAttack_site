@@ -1,64 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	{% load static %}
-	<meta charset="UTF-8">
-	<title>{{ title }}</title>
-	<link rel="stylesheet" href="{% static 'levels/css/style.css' %}">
-</head>
-<body>
-<div id="page-werp" class="page">
-	<!-- HADER  -->
-	<header class="header" id="header">
-		<div class="werpper">
-				<div class="header__werpper">
-					<div class="header__logo">
-						<a href="{% url 'home' %}" class="logo__pic">
-							<img src="{% static 'levels/img/svg/logo_pha.svg' %}" alt="Project" class="img__logo">
-						</a>
-					</div>
-
-					<div class="nav_menu">
-						<nav class="header__navigation">
-							<ul class="header__list">
-								<li class="header_item">
-									<a href="{% url 'newlevels' %}" class="header__link">[New levels]</a>
-								</li>
-								<li class="header_item">
-									<a href="#!" class="header__link">[Top levels]</a>
-								</li>
-								<li class="header_item">
-									<a href="#!" class="header__link">[Search]</a>
-								</li>
-								<li class="header_item">
-									<a href="#!" class="header__link">[Manage Accounts]</a>
-									<ul class=nav_accounts>
-										<li class="list_accounts">
-											<a href="" class="accounts__header" id="log_in">[Log in]</a>
-										</li>
-										<li class="list_accounts">
-											<a href="" class="accounts__header" id="log_in">[Sign in]</a>
-										</li>
-										<li class="list_accounts">
-											<a href="" class="accounts__header" id="log_in">[Settings]</a>
-										</li>
-									</ul>
-								</li>
-							</ul>
-						</nav>
-					</div>
-				</div>
-			</div>
-	</header>
-	<!-- Hader end -->
-
-	<!-- Main -->
-	<main class="main">
-		<div class="werpper">
-			<div class="warpper__main">
-				<div class="levels__grid">
-					{% for item in levels %}
-
+{% extends 'base.html' %}
+{% load static %}
+{% block werpper_level %} 
+<div class="warpper__main">
+	<div class="levels__grid">
+		{% if levels %}
+			{% for item in levels.object_list %}
+				{% if item.is_published %}
 					<div class="levels__info">
 						<a href="{% url 'level' item.pk %}" class="levels__url">
 							{% if item.preview %}
@@ -67,52 +14,48 @@
 								<img class="image_level" src="{% static 'levels/img/svg/no_shadow_icon.svg' %}" alt="Levels info">
 							{% endif %}
 							<span class="info">
-								<h1 class="name_level">{{ item.name_level }}</h1>
-								<p class="info_levels_expert_plus">By: {{ item.autthor_level }} / {{ item.diffculty }} <img class="icon_difficulty" src="{% static 'levels/img/svg/' %}{{ item.diffculty }}_ico.svg" alt="icon difficulty"></p>
+								<h1 class="name_level">{{ item.name_level|truncatechars:15 }}</h1>
+								<p class="info_levels_expert_plus">By: {{ item.author_level|truncatechars:12 }} / {{ item.diffculty }} <img class="icon_difficulty" src="{% static 'levels/img/svg/' %}{{ item.diffculty }}_ico.svg" alt="icon difficulty"></p>
 								<p class="rating_levels">Rating: {{ item.rating }} <img class="rating_ico" src="{% static 'levels/img/svg/heart_no.svg' %}" alt="rating"></p>
 							</span>
 						</a>
 					</div>
-
-					{% endfor %}
-					</div>
-					
-				</div>
+				{% endif %}
+			{% endfor %}
+		{% else %}
+			<div class="not_found_levels">
+				<h1 class="not_found_context">Levels Not Found...</h1>
 			</div>
-		</div>
-	</main>
-
-	<footer class="footer">
-		<div class="nav_wrap">
-			<nav class="nav_pages">
-				<li class="pages_item">
-					<a href="#" class="pages_link" id="link-page"><</a>
-				</li>
-				<li class="pages_item">
-					<a href="#" class="pages_link" id="link-page">1</a>
-				</li>
-				<li class="pages_item">
-					<a href="#" class="pages_link" id="link-page">2</a>
-				</li>
-				<li class="pages_item">
-					<a href="#" class="pages_link" id="link-page">3</a>
-				</li>
-				<li class="pages_item">
-					<a href="#" class="pages_link" id="link-page">4</a>
-				</li>
-				<li class="pages_item">
-					<a href="#" class="pages_link" id="link-page">5</a>
-				</li>
-				<li class="pages_item">
-					<a href="#" class="pages_link" id="link-page">6</a>
-				</li>
-				<li class="pages_item">
-					<a href="#" class="pages_link" id="link-page">></a>
-				</li>
-			</nav>
-		</div>
-	</footer>
+		{% endif %}
+	</div>
+		
+	</div>
 </div>
+{% endblock %}
+{% block pages_item %} 
+<div class="nav_wrap">
+	<nav class="nav_pages">
+		{% if levels %}
+			<li class="pages_item{% if not prev_url %}_disabled{% endif %}">
+				<a href="{{ prev_url }}" class="pages_link" id="link-page"><</a>
+			</li>
+			{% for n in levels.paginator.page_range %}
+				{% if levels.number == n %}
+					<li class="pages_item">
+						<a href="?page={{ n }}" class="pages_link" id="link-page">{{ n }}</a>
+					</li>
+				{% elif n > levels.number|add:-7 and n < levels.number|add:7 %}
+					<li class="pages_item">
+						<a href="?page={{ n }}" class="pages_link" id="link-page">{{ n }}</a>
+					</li>
+				{% endif %}
+			{% endfor %}
+			<li class="pages_item{% if not next_url %}_disabled{% endif %}">
+				<a href="{{ next_url }}" class="pages_link" id="link-page">></a>
+			</li>
+		{% endif %}
+	</nav>
+</div>
+{% endblock %}
 
-</body>
-</html>
+

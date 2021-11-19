@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>{% block title %}Project Heart Attack{% endblock %}</title>
+	<link rel="stylesheet" href="{% static 'levels/css/style.css' %}">
+	<link rel="shortcut icon" href="{% static 'levels/img/ico_pha.png' %}" type="image/png">
+</head>
+<body>
+<div id="page-werp" class="page">
+	<!-- HADER  -->
+	<header class="header" id="header">
+		<div class="werpper">
+				<div class="header__werpper">
+					<div class="header__logo">
+						<a href="{% url 'home' %}" class="logo__pic">
+							<img src="{% static 'levels/img/svg/logo_pha.svg' %}" alt="Project" class="img__logo">
+						</a>
+					</div>
+
+					{% include 'inc/_nav.html' %}
+
+				</div>
+			</div>
+	</header>
+	<!-- Hader end -->
+
+	<!-- Main -->
+	<main class="main">
+		<div class="werpper">
+            {% block werpper_level %} {% endblock %}	
+		</div>
+	</main>
+
+	<footer class="footer">
+        {% block pages_item %} {% endblock %}
+	</footer>
+</div>
+
+</body>
+</html>
