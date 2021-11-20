@@ -706,6 +706,23 @@ p.difficulty{
     background-color: #3a8cff;
 }
 
+.advanced_page {
+    background-color: #FFC700;
+}
+
+.moderete_page {
+    background-color: #00CA26;
+}
+
+.master_page{
+    background-color: #FF1FFF;
+}
+
+.expert_page{
+    background-color: #FF6D49;
+}
+
+
 p.name_level_page{
     font-family: 'PT Sans Narrow';
     font-size: 40px;
@@ -791,4 +808,101 @@ p.rating_level{
     pointer-events: none;
 }
 
+.footer_inner{
+    position: relative;
+    display: block;
+    width: 1210px;
+    height: 50px;
+}
+
 /*page level end */
+
+/* comment block start */
+
+.comment{
+    position: relative;
+    display: block;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.title_author_comment{
+    width: 300px;
+    position: relative;
+    display: block;
+    color: #ff0a64;
+    text-decoration: none;
+    margin-bottom: 15px;
+    
+}
+
+.comment_box{
+    position: relative;
+    display: block;
+    width: 600px;
+    max-height: 800px;
+    margin: 0;
+    background-color: #c5c5c5;
+    padding-left: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border: solid #d9d7d7 4px;
+}
+
+.text_comment{
+    margin: 0;
+    margin-bottom: 10px;
+}
+
+.btn_reply{
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    color: #7e7b7b;
+    margin-right: 5px;
+    text-decoration: none;
+    font-size: 10px;
+}
+
+.comments_container{
+    border-top: solid black 2px;
+    border-bottom: solid black 2px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.box_send{
+    display: none;
+    position: relative;
+    margin-bottom: 5px;
+}
+
+.enable{
+    display: block;
+}
+
+.comment_input{
+    width: 1100px;
+    height: 70px;
+    max-height: 300px;
+    resize: none;
+    font-size: 17px;
+}
+
+.icon_send{
+    content: url(/img/svg/send.png);
+    width: 45px;
+    height: 45px;
+    margin-left: 15px;
+    margin-top: 10px;
+}
+
+.form_send{
+    position: relative;
+    display: flex;
+}
+
+
+
+
+/* comment block end */
