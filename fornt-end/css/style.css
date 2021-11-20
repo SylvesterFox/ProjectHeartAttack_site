@@ -12,6 +12,21 @@
          url('../fonts/noto-sans-mono-v11-latin-regular.svg#NotoSansMono') format('svg'); /* Legacy iOS */
   }
 
+/* pt-sans-narrow-700 - latin */
+@font-face {
+    font-family: 'PT Sans Narrow';
+    font-style: normal;
+    font-weight: 700;
+    src: url('../fonts/pt-sans-narrow-v12-latin-700.eot'); /* IE9 Compat Modes */
+    src: local(''),
+         url('../fonts/pt-sans-narrow-v12-latin-700.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('../fonts/pt-sans-narrow-v12-latin-700.woff2') format('woff2'), /* Super Modern Browsers */
+         url('../fonts/pt-sans-narrow-v12-latin-700.woff') format('woff'), /* Modern Browsers */
+         url('../fonts/pt-sans-narrow-v12-latin-700.ttf') format('truetype'), /* Safari, Android, iOS */
+         url('../fonts/pt-sans-narrow-v12-latin-700.svg#PTSansNarrow') format('svg'); /* Legacy iOS */
+  }
+  
+
 body{
     margin: 0;
     font-family: 'Noto Sans Mono';
@@ -615,3 +630,165 @@ body::-webkit-scrollbar{
 }
 
 /* footer end */
+
+
+/* page level start */
+
+.preview_inner{
+    width: 1210px;
+    height: 457px;
+    margin-top: 20px;
+}
+
+.botton_vote_list{
+    position: relative;
+    width: 180px;
+    height: 74px;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    margin-left: 25px;
+}
+
+.vote_btn {
+    width: 190px;
+    height: 109px;
+}
+
+.botton_vote{
+    position: relative;
+    display: block;
+    height: 40px;
+    width: 190px;
+
+}
+
+.vote{
+    margin-top: 15px;
+}
+
+.image_preview_level{
+    width: 217px;
+    height: 211px;
+}
+
+.info_inner{
+    position: relative;
+    display: block;
+    flex-wrap: wrap;
+    flex-direction: row;
+    width: 990px;
+    height: 465px;
+    left: 230px;
+    bottom: 350px;
+    max-height: 800px;
+}
+
+.title_level_page{
+    position: absolute;
+    display: flex;
+    width: 970px;
+    height: 100px;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+p.difficulty{
+    padding: 5px 30px 5px 30px;
+    margin: 0;
+    color:#fff;
+    text-align: center;
+    box-shadow: 0px 6px 7px 0 rgba(0, 0, 0, 0.3);
+}
+
+.basic_page {
+    background-color: #3a8cff;
+}
+
+p.name_level_page{
+    font-family: 'PT Sans Narrow';
+    font-size: 40px;
+    margin: 0;
+    font-style: normal;
+}
+
+p.title_by_level{
+    position: absolute;
+    display: block;
+    top: 30px;
+    font-size: 20px;
+}
+
+p.created_by{
+    position: absolute;
+    display: block;
+    top: 123px;
+    font-family: 'PT Sans Narrow';
+    font-size: 17px;
+}
+
+.author_by{
+    font-family: 'Noto Sans Mono';
+    color:#ff0a64;
+    text-decoration: none;
+    margin-left: 4px;
+}
+
+p.rating_level{
+    position: absolute;
+    display: block;
+    top: 150px;
+    font-family: 'PT Sans Narrow';
+    font-size: 17px;
+}
+
+.rating_num{
+    font-family: 'Noto Sans Mono';
+    margin-left: 4px;
+}
+
+.image_rating{
+    position: absolute;
+    content: url(/img/svg/heart_ico.png);
+    margin-left: 4px;
+}
+
+.description_inner{
+    position: absolute;
+    display: block;
+    margin-top: 190px;
+}
+
+.description_title{
+    font-family: 'PT Sans Narrow';
+    font-size: 20px;
+    margin: 0;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+.text_description{
+    margin: 0;
+    border-top: solid black 1px;
+    border-bottom: solid black 1px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.btn_list{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    margin-top: 25px;
+}
+
+.disble{
+    opacity: 0;
+    pointer-events: none;
+}
+
+/*page level end */
