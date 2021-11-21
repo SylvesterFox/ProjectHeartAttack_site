@@ -63,6 +63,21 @@
                 </div>
             </div>
         </div>
+        <div class="pop_up" id="pop_up_settings">
+            <div class="pop_up_container" id="container_login">
+                <div class="pop_up_body" id="popup_body_login">
+                    <P class="title_login">Forgot password?</P>
+                    <form action="">
+                        <input type="email" class="login_form" placeholder="Email">
+                        <div class="links_pop_up">
+                            <a href="#pop_up_login" class="link_login popup_links">Log in?</a>
+                        </div>
+                        <button class="login_button">Submit</button>
+                    </form>
+                    <div class="pop_up_close close-popup" id="pop_up_close">&#10006</div>
+                </div>
+            </div>
+        </div>
         <header class="header lock-padding">
             <div class="container">
                 <div class="header__inner">
@@ -103,7 +118,7 @@
                                         </a>
                                     </li>
                                     <li class="list_accounts">
-                                        <a href="" class="accounts__header" id="Settings">
+                                        <a href="#pop_up_settings" class="accounts__header popup_links" id="Settings">
                                             <div class="link__accounts">
                                                 [Settings]
                                             </div>
@@ -182,6 +197,13 @@
                                     <a href="" class="title_author_comment">[ Author ]</a>
                                     <div class="comment_box">
                                         <p class="text_comment">UwU</p>
+                                        <a href="#" class="btn_reply">Reply</a>
+                                    </div>
+                                </li>
+                                <li class="comment_list">
+                                    <a href="" class="title_author_comment">[ SylvesterNotCute ]</a>
+                                    <div class="comment_box">
+                                        <p class="text_comment">OwO</p>
                                         <a href="#" class="btn_reply">Reply</a>
                                     </div>
                                 </li>
