@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New levels</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="./js/header_fixed.js"></script>
+    
+</head>
+<body>
+    <div class="wrapper">
+        <div class="pop_up" id="pop_up_login">
+            <div class="pop_up_container" id="container_login">
+                <div class="pop_up_body" id="popup_body_login">
+                    <P class="title_login">Log in</P>
+                    <form action="">
+                        <input type="text" class="login_form" placeholder="Email/login">
+                        <input type="password" class="login_form" placeholder="Password">
+                        <div class="links_pop_up">
+                            <a href="#pop_up_forgot" class="link_login popup_links">Forgot password</a>
+                            <p>/</p>
+                            <a href="#pop_up_sign" class="link_login popup_links">Sign in</a>
+                        </div>
+                        <button class="login_button">Log in</button>
+                    </form>
+                    <div class="pop_up_close close-popup" id="pop_up_close">&#10006</div>
+                </div>
+            </div>
+        </div>
+        <div class="pop_up" id="pop_up_sign">
+            <div class="pop_up_container" id="container_login">
+                <div class="pop_up_body" id="popup_body_login">
+                    <P class="title_login">Sign in</P>
+                    <form action="">
+                        <input type="text" class="login_form" placeholder="Nikname">
+                        <input type="email" class="login_form" placeholder="Email">
+                        <input type="password" class="login_form" placeholder="Password">
+                        <input type="password" class="login_form" placeholder="Confirm Password">
+                        <div class="links_pop_up">
+                            <a href="#pop_up_login" class="link_login popup_links">Log in?</a>
+                        </div>
+                        <button class="login_button">Submit</button>
+                    </form>
+                    <div class="pop_up_close close-popup" id="pop_up_close">&#10006</div>
+                </div>
+            </div>
+        </div>
+        <div class="pop_up" id="pop_up_forgot">
+            <div class="pop_up_container" id="container_login">
+                <div class="pop_up_body" id="popup_body_login">
+                    <P class="title_login">Forgot password?</P>
+                    <form action="">
+                        <input type="email" class="login_form" placeholder="Email">
+                        <div class="links_pop_up">
+                            <a href="#pop_up_login" class="link_login popup_links">Log in?</a>
+                        </div>
+                        <button class="login_button">Submit</button>
+                    </form>
+                    <div class="pop_up_close close-popup" id="pop_up_close">&#10006</div>
+                </div>
+            </div>
+        </div>
+        <div class="pop_up" id="pop_up_settings">
+            <div class="pop_up_container" id="container_login">
+                <div class="pop_up_body" id="popup_body_login">
+                    <P class="title_login">Forgot password?</P>
+                    <form action="">
+                        <input type="email" class="login_form" placeholder="Email">
+                        <div class="links_pop_up">
+                            <a href="#pop_up_login" class="link_login popup_links">Log in?</a>
+                        </div>
+                        <button class="login_button">Submit</button>
+                    </form>
+                    <div class="pop_up_close close-popup" id="pop_up_close">&#10006</div>
+                </div>
+            </div>
+        </div>
+        <header class="header lock-padding">
+            <div class="container">
+                <div class="header__inner">
+                    <div class="header__logo">
+                        <a href="" class="index_main">
+                            <img class="logo_img" src="img/svg/logo.png" alt="logo">
+                            <div class="title">
+                                <span class="text-style-1">Project</span>HeartAttack
+                            </div>
+                        </a> 
+                    </div>
+                    <nav class="nav" id="nav">
+                        <ui class="header_list">
+                            <li class="header_item">
+                                <a href="" class="nav__link">[New levels]</a>
+                            </li>
+                            <li class="header_item">
+                                <a href="" class="nav__link">[Top levels]</a>
+                            </li>
+                            <li class="header_item">
+                                <a href="" class="nav__link" >[Search]</a>
+                            </li>
+                            <li class="header_item_b">
+                                <a href="" class="nav__link" id="burger_btn">[Manage Accounts]</a>
+                                <ul class="burger__nav">
+                                    <li class="list_accounts">
+                                        <a href="#pop_up_login" class="accounts__header popup_links" id="open_popup_login">
+                                            <div class="link__accounts">
+                                                [Log in]
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="list_accounts">
+                                        <a href="#pop_up_sign" class="accounts__header popup_links" id="Sign_in">
+                                            <div class="link__accounts">
+                                                [Sign in]
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="list_accounts">
+                                        <a href="#pop_up_settings"" class="accounts__header popup_links" id="Settings">
+                                            <div class="link__accounts">
+                                                [Settings]
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ui>
+                    </nav>
+                </div>
+            </div>
+        </header>
+        <main class="main">
+            <div class="container">
+                <div class="main__panel">
+                    <div class="container_panel">
+                        <p class="title_page">New Levels</p>
+                        <nav class="nav__panel">
+                            <a href="#" class="nav_panel_link"><span class="ico_panel ico_panel_big"></span></a>
+                            <span class="border_panel">|</span>
+                            <a href="#" class="nav_panel_link"><span class="ico_panel ico_panel_small"></span></a>
+                        </nav>
+                    </div>
+                </div>
+                <div class="main__inner">
+                    <div class="level_preview">
+                        <a href="#" class="level_container">
+                            <img class="img_level" src="img/svg/paicon.png" alt="paicon">
+                            <div class="level_name">[ Level Name ]</div>
+                            <div class="level_info">
+                                <span class="info_title">By:Author/Basic</span>
+                                <div class="difficulty_levels basic"></div>
+                            </div>
+                            <div class="rating">
+                                <span class="rating_title">rating: 999999</span>
+                                <img class="rating_ico" src="img/svg/heart_ico.png" alt="rating_ico">
+                            </div>
+                        </a>
+                    </div>
+                    <div class="level_preview">
+                        <a href="#" class="level_container">
+                            <img class="img_level" src="img/svg/paicon.png" alt="paicon">
+                            <div class="level_name">[ Level Name ]</div>
+                            <div class="level_info">
+                                <span class="info_title">By:Author/Advan..</span>
+                                <div class="difficulty_levels advanced"></div>
+                            </div>
+                            <div class="rating">
+                                <span class="rating_title">rating: 999999</span>
+                                <img class="rating_ico" src="img/svg/heart_ico.png" alt="rating_ico">
+                            </div>
+                        </a>
+                    </div>
+                    <div class="level_preview">
+                        <a href="#" class="level_container">
+                            <img class="img_level" src="img/svg/paicon.png" alt="paicon">
+                            <div class="level_name">[ Level Name ]</div>
+                            <div class="level_info">
+                                <span class="info_title">By:Author/Moder..</span>
+                                <div class="difficulty_levels moderete"></div>
+                            </div>
+                            <div class="rating">
+                                <span class="rating_title">rating: 999999</span>
+                                <img class="rating_ico" src="img/svg/heart_ico.png" alt="rating_ico">
+                            </div>
+                        </a>
+                    </div>
+                    <div class="level_preview">
+                        <a href="#" class="level_container">
+                            <img class="img_level" src="img/svg/paicon.png" alt="paicon">
+                            <div class="level_name">[ Level Name ]</div>
+                            <div class="level_info">
+                                <span class="info_title">By:Author/Master</span>
+                                <div class="difficulty_levels master"></div>
+                            </div>
+                            <div class="rating">
+                                <span class="rating_title">rating: 999999</span>
+                                <img class="rating_ico" src="img/svg/heart_ico.png" alt="rating_ico">
+                            </div>
+                        </a>
+                    </div>
+                    <div class="level_preview">
+                        <a href="#" class="level_container">
+                            <img class="img_level" src="img/svg/paicon.png" alt="paicon">
+                            <div class="level_name">[ Level Name ]</div>
+                            <div class="level_info">
+                                <span class="info_title">By:Author/Expert</span>
+                                <div class="difficulty_levels expert"></div>
+                            </div>
+                            <div class="rating">
+                                <span class="rating_title">rating: 999999</span>
+                                <img class="rating_ico" src="img/svg/heart_ico.png" alt="rating_ico">
+                            </div>
+                        </a>
+                    </div>
+                    <div class="level_preview">
+                        <a href="#" class="level_container">
+                            <img class="img_level" src="img/svg/paicon.png" alt="paicon">
+                            <div class="level_name">[ Level Name ]</div>
+                            <div class="level_info">
+                                <span class="info_title">By:Author/Basic</span>
+                                <div class="difficulty_levels basic"></div>
+                            </div>
+                            <div class="rating">
+                                <span class="rating_title">rating: 999999</span>
+                                <img class="rating_ico" src="img/svg/heart_ico.png" alt="rating_ico">
+                            </div>
+                        </a>
+                    </div>
+                    <div class="level_preview">
+                        <a href="#" class="level_container">
+                            <img class="img_level" src="img/svg/paicon.png" alt="paicon">
+                            <div class="level_name">[ Level Name ]</div>
+                            <div class="level_info">
+                                <span class="info_title">By:Author/Basic</span>
+                                <div class="difficulty_levels basic"></div>
+                            </div>
+                            <div class="rating">
+                                <span class="rating_title">rating: 999999</span>
+                                <img class="rating_ico" src="img/svg/heart_ico.png" alt="rating_ico">
+                            </div>
+                        </a>
+                    </div>
+                    <div class="level_preview">
+                        <a href="#" class="level_container">
+                            <img class="img_level" src="img/svg/paicon.png" alt="paicon">
+                            <div class="level_name">[ Level Name ]</div>
+                            <div class="level_info">
+                                <span class="info_title">By:Author/Basic</span>
+                                <div class="difficulty_levels basic"></div>
+                            </div>
+                            <div class="rating">
+                                <span class="rating_title">rating: 999999</span>
+                                <img class="rating_ico" src="img/svg/heart_ico.png" alt="rating_ico">
+                            </div>
+                        </a>
+                    </div>
+                    <div class="level_preview">
+                        <a href="#" class="level_container">
+                            <img class="img_level" src="img/svg/paicon.png" alt="paicon">
+                            <div class="level_name">[ Level Name ]</div>
+                            <div class="level_info">
+                                <span class="info_title">By:Author/Basic</span>
+                                <div class="difficulty_levels basic"></div>
+                            </div>
+                            <div class="rating">
+                                <span class="rating_title">rating: 999999</span>
+                                <img class="rating_ico" src="img/svg/heart_ico.png" alt="rating_ico">
+                            </div>
+                        </a>
+                    </div>
+                    <div class="level_preview">
+                        <a href="#" class="level_container">
+                            <img class="img_level" src="img/svg/paicon.png" alt="paicon">
+                            <div class="level_name">[ Level Name ]</div>
+                            <div class="level_info">
+                                <span class="info_title">By:Author/Basic</span>
+                                <div class="difficulty_levels basic"></div>
+                            </div>
+                            <div class="rating">
+                                <span class="rating_title">rating: 999999</span>
+                                <img class="rating_ico" src="img/svg/heart_ico.png" alt="rating_ico">
+                            </div>
+                        </a>
+                    </div>
+                    <div class="level_preview">
+                        <a href="#" class="level_container">
+                            <img class="img_level" src="img/svg/paicon.png" alt="paicon">
+                            <div class="level_name">[ Level Name ]</div>
+                            <div class="level_info">
+                                <span class="info_title">By:Author/Basic</span>
+                                <div class="difficulty_levels basic"></div>
+                            </div>
+                            <div class="rating">
+                                <span class="rating_title">rating: 999999</span>
+                                <img class="rating_ico" src="img/svg/heart_ico.png" alt="rating_ico">
+                            </div>
+                        </a>
+                    </div>
+                    <div class="level_preview">
+                        <a href="#" class="level_container">
+                            <img class="img_level" src="img/svg/paicon.png" alt="paicon">
+                            <div class="level_name">[ Level Name ]</div>
+                            <div class="level_info">
+                                <span class="info_title">By:Author/Basic</span>
+                                <div class="difficulty_levels basic"></div>
+                            </div>
+                            <div class="rating">
+                                <span class="rating_title">rating: 999999</span>
+                                <img class="rating_ico" src="img/svg/heart_ico.png" alt="rating_ico">
+                            </div>
+                        </a>
+                    </div>
+                    <div class="level_preview">
+                        <a href="#" class="level_container">
+                            <img class="img_level" src="img/svg/paicon.png" alt="paicon">
+                            <div class="level_name">[ Level Name ]</div>
+                            <div class="level_info">
+                                <span class="info_title">By:Author/Basic</span>
+                                <div class="difficulty_levels basic"></div>
+                            </div>
+                            <div class="rating">
+                                <span class="rating_title">rating: 999999</span>
+                                <img class="rating_ico" src="img/svg/heart_ico.png" alt="rating_ico">
+                            </div>
+                        </a>
+                    </div>
+                    <div class="level_preview">
+                        <a href="#" class="level_container">
+                            <img class="img_level" src="img/svg/paicon.png" alt="paicon">
+                            <div class="level_name">[ Level Name ]</div>
+                            <div class="level_info">
+                                <span class="info_title">By:Author/Basic</span>
+                                <div class="difficulty_levels basic"></div>
+                            </div>
+                            <div class="rating">
+                                <span class="rating_title">rating: 999999</span>
+                                <img class="rating_ico" src="img/svg/heart_ico.png" alt="rating_ico">
+                            </div>
+                        </a>
+                    </div>
+                    <div class="level_preview">
+                        <a href="#" class="level_container">
+                            <img class="img_level" src="img/svg/paicon.png" alt="paicon">
+                            <div class="level_name">[ Level Name ]</div>
+                            <div class="level_info">
+                                <span class="info_title">By:Author/Basic</span>
+                                <div class="difficulty_levels basic"></div>
+                            </div>
+                            <div class="rating">
+                                <span class="rating_title">rating: 999999</span>
+                                <img class="rating_ico" src="img/svg/heart_ico.png" alt="rating_ico">
+                            </div>
+                        </a>
+                    </div>
+                    <div class="level_preview">
+                        <a href="#" class="level_container">
+                            <img class="img_level" src="img/svg/paicon.png" alt="paicon">
+                            <div class="level_name">[ Level Name ]</div>
+                            <div class="level_info">
+                                <span class="info_title">By:Author/Basic</span>
+                                <div class="difficulty_levels basic"></div>
+                            </div>
+                            <div class="rating">
+                                <span class="rating_title">rating: 999999</span>
+                                <img class="rating_ico" src="img/svg/heart_ico.png" alt="rating_ico">
+                            </div>
+                        </a>
+                    </div>
+                    <div class="level_preview">
+                        <a href="#" class="level_container">
+                            <img class="img_level" src="img/svg/paicon.png" alt="paicon">
+                            <div class="level_name">[ Level Name ]</div>
+                            <div class="level_info">
+                                <span class="info_title">By:Author/Basic</span>
+                                <div class="difficulty_levels basic"></div>
+                            </div>
+                            <div class="rating">
+                                <span class="rating_title">rating: 999999</span>
+                                <img class="rating_ico" src="img/svg/heart_ico.png" alt="rating_ico">
+                            </div>
+                        </a>
+                    </div>
+                    <div class="level_preview">
+                        <a href="#" class="level_container">
+                            <img class="img_level" src="img/svg/paicon.png" alt="paicon">
+                            <div class="level_name">[ Level Name ]</div>
+                            <div class="level_info">
+                                <span class="info_title">By:Author/Basic</span>
+                                <div class="difficulty_levels basic"></div>
+                            </div>
+                            <div class="rating">
+                                <span class="rating_title">rating: 999999</span>
+                                <img class="rating_ico" src="img/svg/heart_ico.png" alt="rating_ico">
+                            </div>
+                        </a>
+                    </div>
+                    <div class="level_preview">
+                        <a href="#" class="level_container">
+                            <img class="img_level" src="img/svg/paicon.png" alt="paicon">
+                            <div class="level_name">[ Level Name ]</div>
+                            <div class="level_info">
+                                <span class="info_title">By:Author/Basic</span>
+                                <div class="difficulty_levels basic"></div>
+                            </div>
+                            <div class="rating">
+                                <span class="rating_title">rating: 999999</span>
+                                <img class="rating_ico" src="img/svg/heart_ico.png" alt="rating_ico">
+                            </div>
+                        </a>
+                    </div>
+                    <div class="level_preview">
+                        <a href="#" class="level_container">
+                            <img class="img_level" src="img/svg/paicon.png" alt="paicon">
+                            <div class="level_name">[ Level Name ]</div>
+                            <div class="level_info">
+                                <span class="info_title">By:Author/Basic</span>
+                                <div class="difficulty_levels basic"></div>
+                            </div>
+                            <div class="rating">
+                                <span class="rating_title">rating: 999999</span>
+                                <img class="rating_ico" src="img/svg/heart_ico.png" alt="rating_ico">
+                            </div>
+                        </a>
+                    </div>
+                    <div class="level_preview">
+                        <a href="#" class="level_container">
+                            <img class="img_level" src="img/svg/paicon.png" alt="paicon">
+                            <div class="level_name">[ Level Name ]</div>
+                            <div class="level_info">
+                                <span class="info_title">By:Author/Basic</span>
+                                <div class="difficulty_levels basic"></div>
+                            </div>
+                            <div class="rating">
+                                <span class="rating_title">rating: 999999</span>
+                                <img class="rating_ico" src="img/svg/heart_ico.png" alt="rating_ico">
+                            </div>
+                        </a>
+                    </div>
+                    <div class="level_preview">
+                        <a href="#" class="level_container">
+                            <img class="img_level" src="img/svg/paicon.png" alt="paicon">
+                            <div class="level_name">[ Level Name ]</div>
+                            <div class="level_info">
+                                <span class="info_title">By:Author/Basic</span>
+                                <div class="difficulty_levels basic"></div>
+                            </div>
+                            <div class="rating">
+                                <span class="rating_title">rating: 999999</span>
+                                <img class="rating_ico" src="img/svg/heart_ico.png" alt="rating_ico">
+                            </div>
+                        </a>
+                    </div>
+                    <div class="level_preview">
+                        <a href="#" class="level_container">
+                            <img class="img_level" src="img/svg/paicon.png" alt="paicon">
+                            <div class="level_name">[ Level Name ]</div>
+                            <div class="level_info">
+                                <span class="info_title">By:Author/Basic</span>
+                                <div class="difficulty_levels basic"></div>
+                            </div>
+                            <div class="rating">
+                                <span class="rating_title">rating: 999999</span>
+                                <img class="rating_ico" src="img/svg/heart_ico.png" alt="rating_ico">
+                            </div>
+                        </a>
+                    </div>
+                    <div class="level_preview">
+                        <a href="#" class="level_container">
+                            <img class="img_level" src="img/svg/paicon.png" alt="paicon">
+                            <div class="level_name">[ Level Name ]</div>
+                            <div class="level_info">
+                                <span class="info_title">By:Author/Basic</span>
+                                <div class="difficulty_levels basic"></div>
+                            </div>
+                            <div class="rating">
+                                <span class="rating_title">rating: 999999</span>
+                                <img class="rating_ico" src="img/svg/heart_ico.png" alt="rating_ico">
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer_panel"></div>
+            </div>
+        </main>
+        <footer class="footer footer_fixed lock-padding">
+            <div class="container">
+                <div class="footer_inner">
+                    <nav class="pagenator">
+                        <a href="" class="link_page"><<</a>
+                        <a href="" class="link_page"><</a>
+                        <a href="" class="link_page">1</a>
+                        <a href="" class="link_page">2</a>
+                        <a href="" class="link_page">3</a>
+                        <a href="" class="link_page">4</a>
+                        <a href="" class="link_page">5</a>
+                        <a href="" class="link_page">6</a>
+                        <a href="" class="link_page">7</a>
+                        <a href="" class="link_page">8</a>
+                        <a href="" class="link_page">9</a>
+                        <a href="" class="link_page">10</a>
+                        <a href="" class="link_page">11</a>
+                        <a href="" class="link_page">12</a>
+                        <a href="" class="link_page">13</a>
+                        <a href="" class="link_page">14</a>
+                        <a href="" class="link_page">></a>
+                        <a href="" class="link_page">>></a>
+                    </nav>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script src="./js/popup.js"></script>
+    <script src="./js/burger.js"></script>
+</body>
+</html>
