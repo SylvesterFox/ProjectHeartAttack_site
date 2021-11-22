@@ -4,18 +4,18 @@ from django.contrib.contenttypes.models import ContentType
 from django.contrib.contenttypes.fields import GenericRelation
 
 class Levels(models.Model):
-    _EASY = "Easy"
-    _NORMAL = "Normal"
-    _HARD = "Hard"
-    _EXPERT = "Expert"
-    _EXPERTPLUS = "Expert+"
+    _EASY = "basic"
+    _NORMAL = "moderate"
+    _HARD = "advanced"
+    _EXPERT = "master"
+    _EXPERTPLUS = "expert"
 
     _DIFFCULTY = [
-        (_EASY, "Easy"),
-        (_NORMAL, "Normal"),
-        (_HARD, "Hard"),
-        (_EXPERT, "Expert"),
-        (_EXPERTPLUS, "Expert+"),
+        (_EASY, "basic"),
+        (_NORMAL, "moderate"),
+        (_HARD, "advanced"),
+        (_EXPERT, "master"),
+        (_EXPERTPLUS, "expert"),
     ]
 
     name_level = models.CharField(max_length=20, verbose_name='Name levels')

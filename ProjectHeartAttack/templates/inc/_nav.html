@@ -1,29 +1,39 @@
-<div class="nav_menu">
-    <nav class="header__navigation">
-        <ul class="header__list">
-            <li class="header_item">
-                <a href="{% url 'newlevels' %}" class="header__link">[New levels]</a>
-            </li>
-            <li class="header_item">
-                <a href="{% url 'toplevels' %}" class="header__link">[Top levels]</a>
-            </li>
-            <li class="header_item">
-                <a href="#!" class="header__link">[Search]</a>
-            </li>
-            <li class="header_item">
-                <a href="#!" class="header__link">[Manage Accounts]</a>
-                <ul class=nav_accounts>
-                    <li class="list_accounts">
-                        <a href="" class="accounts__header" id="log_in">[Log in]</a>
-                    </li>
-                    <li class="list_accounts">
-                        <a href="" class="accounts__header" id="log_in">[Sign in]</a>
-                    </li>
-                    <li class="list_accounts">
-                        <a href="" class="accounts__header" id="log_in">[Settings]</a>
-                    </li>
-                </ul>
-            </li>
-        </ul>
-    </nav>
-</div>
+<nav class="nav" id="nav">
+    <ui class="header_list">
+        <li class="header_item">
+            <a href="{% url 'newlevels' %}" class="nav__link">[New levels]</a>
+        </li>
+        <li class="header_item">
+            <a href="{% url 'toplevels' %}" class="nav__link">[Top levels]</a>
+        </li>
+        <li class="header_item">
+            <a href="" class="nav__link" >[Search]</a>
+        </li>
+        <li class="header_item_b">
+            <a href="" class="nav__link" id="burger_btn">[Manage Accounts]</a>
+            <ul class="burger__nav">
+                <li class="list_accounts">
+                    <a href="#pop_up_login" class="accounts__header popup_links" id="open_popup_login">
+                        <div class="link__accounts">
+                            [Log in]
+                        </div>
+                    </a>
+                </li>
+                <li class="list_accounts">
+                    <a href="#pop_up_sign" class="accounts__header popup_links" id="Sign_in">
+                        <div class="link__accounts">
+                            [Sign in]
+                        </div>
+                    </a>
+                </li>
+                <li class="list_accounts">
+                    <a href="#pop_up_settings"" class="accounts__header popup_links" id="Settings">
+                        <div class="link__accounts">
+                            [Settings]
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </li>
+    </ui>
+</nav>

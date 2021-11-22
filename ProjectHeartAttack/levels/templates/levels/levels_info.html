@@ -1,0 +1,138 @@
+{% extends 'base_levelinfo.html' %}
+{% load static %}
+
+{% block panel_box %}
+
+<p class="title_page">Info Level | {{ levels.name_level }}</p>
+
+{% endblock %}
+
+{% block levelinfo %}
+<section class="preview_level">
+    {% if levels.is_published %}
+        <div class="preview_inner">
+            {% if levels.preview %}
+                <img src="{{ levels.preview.url }}" alt="preview-level" class="image_preview_level">
+            {% else %}
+                <img src="{% static 'levels/img/svg/paicon.png' %}" alt="preview-level" class="image_preview_level">
+            {% endif %}
+            <nav class="vote_btn">
+                <ul class="botton_vote_list">
+                    <li class="botton_vote">
+                        <a href="" class="nav__link">⠀[ VOTE UP ]⠀</a>
+                    </li>
+                    <li class="botton_vote vote">
+                        <a href="" class="nav__link">[ VOTE DOWN ]</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="info_inner">
+                <div class="title_level_page">
+                    <p class="name_level_page">{{ levels.name_level }}</p>
+                    <div class="difficulty_level">
+                        <p class="difficulty {{ levels.diffculty }}_page">{{ levels.diffculty }}</p>
+                    </div>
+                    <p class="title_by_level">By {{ levels.level_by }}</p>
+                    <p class="created_by">Created by: <a href="#" class="author_by">{{ levels.author_level }}</a></p>
+                    <p class="rating_level">Rating: <span class="rating_num">{{ levels.rating }}</span> <span class="image_rating"></span></p>
+                    <div class="description_inner">
+                        <p class="description_title">Description:</p>
+                        <div class="description_block">
+                            <p class="text_description">{{ levels.content }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% else %}
+        <div class="not_found_levels">
+            <h1 class="not_found_context">Levels Not Found...</h1>
+        </div> 
+    {% endif %}
+    </div>
+</section>
+
+{% endblock %}
+
+{% block footer_nav %}
+
+{% if levels.is_published %}
+<nav class="btn_footer">
+    <ul class="btn_list">
+        {% if levels.levels_file %}
+            <li class="btn_manage_footer">
+                <a href="{{ levels.levels_file.url }}" class="nav__link">[ Downlaod ]</a>
+            </li>
+        {% endif %}
+
+        {% if levels.levels_file %}
+            <li class="btn_manage_footer">
+                <a href="{{ levels.url_getsong }}" class="nav__link">[ Get Song ]</a>
+            </li>
+        {% endif %}
+    </ul>
+</nav>
+{% endif %}
+
+{% endblock %}
+
+{% block comments_main %}
+
+<div class="comment">
+    <a href="" class="title_author_comment">[ SylvesterNotCute ]</a>
+    <div class="comment_box">
+        <p class="text_comment">Nunc ultricies aliquet tellus, non semper urna dapibus id. Donec non est suscipit, efficitur ante sed, tincidunt nisi. Ut scelerisque vitae diam et efficitur. i'm not cute dragofox sniff sniff, i'm not cute dragofox sniff sniff, i'm not cute dragofox sniff sniff, i'm not cute dragofox sniff sniff, i'm not cute dragofox sniff sniff, i'm not cute dragofox sniff sniff</p>
+        <a href="#" class="btn_reply">Reply</a>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block comment_cildren %}
+
+<div class="comment_cildren">
+    <div class="branch">
+        <span class="barnch_comment"></span>
+    </div>
+    <ul class="comment_list_cildren">
+        <li class="comment_list">
+            <a href="" class="title_author_comment">[ Author ]</a>
+            <div class="comment_box">
+                <p class="text_comment">UwU</p>
+                <a href="#" class="btn_reply">Reply</a>
+            </div>
+        </li>
+        <li class="comment_list">
+            <a href="" class="title_author_comment">[ SylvesterNotCute ]</a>
+            <div class="comment_box">
+                <p class="text_comment">OwO</p>
+                <a href="#" class="btn_reply">Reply</a>
+            </div>
+        </li>
+    </ul>
+</div>
+
+{% endblock %}
+
+{% block send_box_comment %} 
+
+<div class="box_send enable" id="box-send">
+    <form action="comments_send" class="form_send">
+        <textarea class="comment_input" name="comment" id="" cols="30" rows="10"></textarea>
+        <a href="" class="send_comment">
+            <div class="icon_send"></div>
+        </a>
+    </form>
+</div>
+
+{% endblock %}
+
+{% block panel_comment %}
+    <p class="title_page">Comments | {{ levels.name_level }}</p>
+{% endblock %}
+
+{% block title %} {{title}} {% endblock %}
+{% block title_panel %}
+    <p class="title_page">{{title}}</p>
+{% endblock %}

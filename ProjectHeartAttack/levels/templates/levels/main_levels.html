@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block level_preview_block %}
+{% if levels %}
+    {% for item in levels.object_list %}
+        {% if item.is_published %}
+            <a href="{% url 'level' item.pk %}" class="level_container">
+                <div class="level_preview">
+                        {% if item.preview %}
+                            <img class="img_level" src="{{ item.preview.url }}" alt="paicon">
+                        {% else %}
+                            <img class="img_level" src="{% static 'levels/img/svg/paicon.png' %}" alt="paicon">
+                        {% endif %}
+                        <div class="level_name">[{{ item.name_level }}]</div>
+                        <div class="difficulty_info">
+                            <div class="difficulty_levels {{ item.diffculty }}"></div>
+                            <div class="difficulty_title">
+                                <p class="diff">{{ item.diffculty }}</p>
+                            </div>
+                        </div>
+                        <div class="level_info">
+                            <p class="info_title">By:{{ item.author_level|truncatechars:20 }}</p>
+                        </div>
+                        <div class="rating">
+                            <div class="icon_rating">
+                                <img class="rating_ico" src="{% static 'levels/img/svg/heart_ico.png' %}" alt="rating_ico">
+                            </div>
+                            <div class="rating_title">
+                                <p class="rating">rating: {{ item.rating }}</p>
+                            </div>
+                        </div>
+                </div>
+            </a>
+        {% endif %}
+    {% endfor %}
+{% else %}
+    <div class="not_found_levels">
+        <h1 class="not_found_context">Levels Not Found...</h1>
+    </div>
+{% endif %}
+{% endblock %}
+
+{% block pagenator %}
+
+{% if levels %}
+<nav class="pagenator">
+        <a href="" class="link_page {% if not prev_url %}disable{% endif %}"><<</a>
+
+        <a href="{{ prev_url }}" class="link_page {% if not prev_url %}disable{% endif %}"><</a>
+        {% for n in levels.paginator.page_range %}
+            {% if levels.number == n %}
+                <a href="?pege={{ n }}" class="link_page">{{ n }}</a>
+            {% elif n > levels.number|add:-7 and n < levels.number|add:7 %}
+                <a href="?page= {{ n }}" class="link_page">{{ n }}</a>
+            {% endif %}
+        {% endfor %}
+        <a href="{{ next_url }}" class="link_page {% if not next_url %}disable{% endif %}">></a>
+        <a href="" class="link_page {% if not next_url %}disable{% endif %}">>></a>
+</nav>
+{% endif %}
+
+{% endblock %}
+
+{% block title %} {{title}} {% endblock %}
+
+{% block title_panel %} 
+    <p class="title_page">{{ title_page }}</p>
+{% endblock %}
