@@ -33,9 +33,8 @@
             <div class="container">
                 <div class="footer_inner">
                     <nav class="pagenator">
-                            <a href="" class="link_page {% if not prev_url %}disable{% endif %}"><<</a>
-
-                            <a href="{{ prev_url }}" class="link_page {% if not prev_url %}disable{% endif %}"><</a>
+                            <a href="{{ prev_url }}" class="link_page {% if not prev_url %}disable{% endif %}"><<</a>
+                            <a href="?page={{ back_url }}" class="link_page {% if not prev_url %}disable{% endif %}"><</a>
                             {% for n in levels.paginator.page_range %}
                                 {% if levels.number == n %}
                                     <a href="?pege={{ n }}" class="link_page">{{ n }}</a>
@@ -43,8 +42,8 @@
                                     <a href="?page= {{ n }}" class="link_page">{{ n }}</a>
                                 {% endif %}
                             {% endfor %}
-                            <a href="{{ next_url }}" class="link_page {% if not next_url %}disable{% endif %}">></a>
-                            <a href="" class="link_page {% if not next_url %}disable{% endif %}">>></a>
+                            <a href="?page={{ forward_url }}" class="link_page {% if not next_url %}disable{% endif %}">></a>
+                            <a href="{{ next_url }}" class="link_page {% if not next_url %}disable{% endif %}">>></a>
                     </nav>
                 </div>
             </div>

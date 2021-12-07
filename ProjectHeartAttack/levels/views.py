@@ -1,6 +1,4 @@
-from django.core import paginator
 from django.shortcuts import render
-from django.http import HttpResponse
 from django.core.paginator import Paginator
 
 from .models import Levels
@@ -14,6 +12,9 @@ def index(request):
     page = paginator.get_page(page_number)
 
     is_paginated = page.has_other_pages()
+
+    page_back = page.number - 1
+    page_forward = page.number + 1
 
     if page.has_previous():
         prev_url = '?page={}'.format(page.previous_page_number())
@@ -30,6 +31,8 @@ def index(request):
         'is_paginated': is_paginated,
         'next_url': next_url,
         'prev_url': prev_url,
+        'back_url': page_back,
+        'forward_url': page_forward,
         'title': 'ProjectHeartAttack | New Levels',
         'title_page': 'New Levels',
         }
@@ -42,8 +45,6 @@ def get_level(request, levels_id):
     if comment:
         level_comment = level.comments.filter(parent=None)
         comment_parent = level.comments.filter(parent__isnull=False)
-        print(comment_parent)
-        print(level_comment)
     else:
         level_comment = None
         comment_parent = None
@@ -64,6 +65,9 @@ def toplevels(request):
     page_number = request.GET.get('page', 1)
     page = paginator.get_page(page_number)
 
+    page_back = page.number - 1
+    page_forward = page.number + 1
+
     is_paginated = page.has_other_pages()
 
     if page.has_previous():
@@ -81,6 +85,8 @@ def toplevels(request):
         'is_paginated': is_paginated,
         'next_url': next_url,
         'prev_url': prev_url,
+        'back_url': page_back,
+        'forward_url': page_forward,
         'title': 'ProjectHeartAttack | Top Levels',
         'title_page': 'Top Levels',
     }
