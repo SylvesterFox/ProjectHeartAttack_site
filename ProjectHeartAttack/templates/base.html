@@ -1,5 +1,5 @@
-{% load static %}
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -9,56 +9,22 @@
     <link rel="stylesheet" href="{% static 'levels/css/style.css' %}">
 	<link rel="shortcut icon" href="{% static 'levels/img/svg/ico_pha.png' %}" type="image/png">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/88019/baffle.min.js"></script>
     <script src="{% static 'levels/js/header_fixed.js' %}"></script>
-    
 </head>
 <body>
     <div class="wrapper">
         {% include 'inc/_pop_up.html' %}
-        <header class="header lock-padding">
-            <div class="container">
-                <div class="header__inner">
-                    <div class="header__logo">
-                        <a href="{% url 'home' %}" class="index_main">
-                            <img class="logo_img" src="{% static 'levels/img/svg/logo.png' %}" alt="logo">
-                            <div class="title">
-                                <span class="text-style-1">Project</span>HeartAttack
-                            </div>
-                        </a> 
-                    </div>
-                    
-					{% include 'inc/_nav.html' %}
+        {% include 'inc/_nav.html' %}
+            {% block content %}
 
-                </div>
-            </div>
-        </header>
-        <main class="main">
-            <div class="container">
-                <div class="main__panel">
-                    <div class="container_panel">
-                        {% block title_panel %} {% endblock %}
-                        <nav class="nav__panel">
-                            <a href="#" class="nav_panel_link"><span class="ico_panel ico_panel_big"></span></a>
-                            <span class="border_panel">|</span>
-                            <a href="#" class="nav_panel_link"><span class="ico_panel ico_panel_small"></span></a>
-                        </nav>
-                    </div>
-                </div>
-                <div class="main__inner">
-					{% block level_preview_block %} {% endblock %}
-                </div>
-                <div class="footer_panel"></div>
-            </div>
-        </main>
-        <footer class="footer footer_fixed lock-padding">
-            <div class="container">
-                <div class="footer_inner">
-                    {% block pagenator %} {% endblock %}
-                </div>
-            </div>
-        </footer>
+            {% endblock %}
+
+            {% block pagenator %} {% endblock %}
+            {% block footer_level_page %} {% endblock %}
     </div>
     <script src="{% static 'levels/js/popup.js' %}"></script>
     <script src="{% static 'levels/js/burger.js' %}"></script>
+    {% block script_levels_page %} {% endblock %}
 </body>
 </html>

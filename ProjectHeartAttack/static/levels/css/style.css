@@ -409,6 +409,7 @@ body::-webkit-scrollbar{
 .difficulty_title{
     position: relative;
     margin-left: 10px;
+    text-shadow: 0px 6px 7px rgba(0, 0, 0, 0.2);
 }
 
 .difficulty_levels{
@@ -508,22 +509,27 @@ body::-webkit-scrollbar{
 
 .expert{
     background-color: #FF6D49;
+    box-shadow: 0px 6px 7px rgba(0, 0, 0, 0.2);
 }
 
 .basic{
     background-color: #3a8cff;
+    box-shadow: 0px 6px 7px rgba(0, 0, 0, 0.2);
 }
 
 .moderate{
     background-color: #00CA26;
+    box-shadow: 0px 6px 7px rgba(0, 0, 0, 0.2);
 }
 
 .advanced{
     background-color: #FFC700;
+    box-shadow: 0px 6px 7px rgba(0, 0, 0, 0.2);
 }
 
 .master{
     background-color: #FF1FFF;
+    box-shadow: 0px 6px 7px rgba(0, 0, 0, 0.2);
 }
 
 .level_container:hover{
@@ -824,7 +830,7 @@ p.rating_level{
 .description_block{
     display: block;
     position: relative;
-    width: 900px;
+    width: 950px;
     max-height: 600px;
     overflow-wrap: break-word;
 }

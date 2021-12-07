@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<main class="main">
+            <div class="container">
+                    {% include 'inc\_panel_level_page.html' %}
+                    {% block levels_block %}
+                    {% endblock %}
+                    {% block comment %}{% endblock comment %}
+            </div>
+</main>
+{% endblock %}
+
+
+
+
+{% block script_levels_page  %}
+    <script src="{% static 'levels/js/shuffle_effect.js' %}"></script>
+{% endblock script_levels_page %}
+
+{% block footer_level_page %}
+<footer class="footer footer_fixed lock-padding">
+    <div class="container">
+        <div class="footer_inner">
+            {% block btn_level %} {% endblock %}
+        </div>
+    </div>
+</footer>
+{% endblock %}

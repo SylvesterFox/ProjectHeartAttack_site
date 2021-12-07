@@ -5,6 +5,7 @@ from django.core.paginator import Paginator
 
 from .models import Levels
 
+
 def index(request):
     levels_list = Levels.objects.all()
     paginator = Paginator(levels_list, 24) # levels_list <- передеём список уровней из базы, num - сколоко уровней будет занимать одна страница, default max 30.
@@ -33,7 +34,8 @@ def index(request):
         'title': 'ProjectHeartAttack | New Levels',
         'title_page': 'New Levels',
         }
-    return render(request, template_name="levels/main_levels.html", context=_context)
+    return render(request, template_name="levels/list_levels.html", context=_context)
+
 
 def get_level(request, levels_id):
     level = Levels.objects.get(pk=levels_id)
@@ -41,7 +43,8 @@ def get_level(request, levels_id):
         'levels': level, 
         'title': f'Level Info|{level.name_level}' 
         }
-    return render(request, template_name='levels/levels_info.html', context=_context)
+    return render(request, template_name='levels/levels_page.html', context=_context)
+
 
 def toplevels(request):
     order_levels_rating = Levels.objects.all().order_by('-rating')
@@ -71,4 +74,4 @@ def toplevels(request):
         'title_page': 'Top Levels',
     }
 
-    return render(request, template_name='levels/main_levels.html', context=_context_toplevels)
+    return render(request, template_name='levels/list_levels.html', context=_context_toplevels)

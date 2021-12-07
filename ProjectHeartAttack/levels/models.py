@@ -3,6 +3,7 @@ from django.conf import settings
 from django.contrib.contenttypes.models import ContentType
 from django.contrib.contenttypes.fields import GenericRelation
 
+
 class Levels(models.Model):
     _EASY = "basic"
     _NORMAL = "moderate"
@@ -10,7 +11,7 @@ class Levels(models.Model):
     _EXPERT = "master"
     _EXPERTPLUS = "expert"
 
-    _DIFFCULTY = [
+    _DIFFICULTY = [
         (_EASY, "basic"),
         (_NORMAL, "moderate"),
         (_HARD, "advanced"),
@@ -19,9 +20,9 @@ class Levels(models.Model):
     ]
 
     name_level = models.CharField(max_length=20, verbose_name='Name levels')
-    rating = models.IntegerField(default=0, verbose_name='Reating')
+    rating = models.IntegerField(default=0, verbose_name='Rating')
     author_level = models.ForeignKey(settings.AUTH_USER_MODEL, verbose_name='Author', on_delete=models.CASCADE) 
-    diffculty = models.CharField(choices=_DIFFCULTY, max_length=20, verbose_name='Diffcuty')
+    diffculty = models.CharField(choices=_DIFFICULTY, max_length=20, verbose_name='Difficulty')
     content = models.TextField(verbose_name='Content', max_length=1024)
     levels_file = models.FileField(upload_to='levels_file/%Y/%m/%d/', verbose_name="Levels file", blank=True) # не забыть поставить blank=false после дебага
     created_at = models.DateTimeField(auto_now_add=True, verbose_name="Created date")
@@ -42,6 +43,7 @@ class Levels(models.Model):
         verbose_name_plural = 'Levels database'
         ordering = ['-created_at']
 
+
 class Comment(models.Model):
     user = models.ForeignKey(settings.AUTH_USER_MODEL, verbose_name="Author comment", on_delete=models.CASCADE)
     context = models.TextField(verbose_name='Text comment')
@@ -58,7 +60,7 @@ class Comment(models.Model):
     like_count = models.IntegerField(default=0, verbose_name="Like")
     Dislike_count = models.IntegerField(default=0, verbose_name="Dislike")
     heart_comments = models.BooleanField(default=False, verbose_name="Heart")
-    timestamp = models.DateTimeField(auto_now=True, verbose_name="Date craeted comments")
+    timestamp = models.DateTimeField(auto_now=True, verbose_name="Date created comments")
 
     def __str__(self):
         return str(self.id)

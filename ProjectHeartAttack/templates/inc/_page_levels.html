@@ -1,4 +1,4 @@
-{% load static %}
+{% load levels_info %}
 <div class="main__panel">
     <div class="container_panel">
         {% block panel_box %} {% endblock %}
@@ -11,7 +11,7 @@
 
 <div class="comments_panel main__panel">
     <div class="container_panel">
-        <p class="title_page">Comments | [level name]</p>
+        {% block panel_comment %} {% endblock %}
     </div>
 </div>
 
