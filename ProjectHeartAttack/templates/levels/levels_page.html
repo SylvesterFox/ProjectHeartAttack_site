@@ -56,41 +56,38 @@
             </div>
 </div>
 <div class="comments_container">
-    <div class="comment">
-        <a href="" class="title_author_comment">[ SylvesterNotCute ]</a>
-        <div class="comment_box">
-            <p class="text_comment">Nunc ultricies aliquet tellus, non semper urna dapibus id. Donec non est suscipit, efficitur ante sed, tincidunt nisi. Ut scelerisque vitae diam et efficitur. i'm not cute dragofox sniff sniff, i'm not cute dragofox sniff sniff, i'm not cute dragofox sniff sniff, i'm not cute dragofox sniff sniff, i'm not cute dragofox sniff sniff, i'm not cute dragofox sniff sniff</p>
-            <a href="#" class="btn_reply">Reply</a>
-        </div>
-        <div class="comment_cildren">
-            <div class="branch">
-                <span class="barnch_comment"></span>
+    {% for comment in comments %}
+        {% if comment %}
+        <div class="comment">
+            <a href="" class="title_author_comment">[ {{ comment.user }} ]</a>
+            <div class="comment_box">
+                <p class="text_comment">{{ comment.context }}</p>
+                <a href="#" class="btn_reply">Reply</a>
             </div>
-            <ul class="comment_list_cildren">
-                <li class="comment_list">
-                    <a href="" class="title_author_comment">[ Author ]</a>
-                    <div class="comment_box">
-                        <p class="text_comment">UwU</p>
-                        <a href="#" class="btn_reply">Reply</a>
+            {% if comments_parent %}
+                <div class="comment_cildren">
+                    <div class="branch">
+                        <span class="barnch_comment"></span>
                     </div>
-                </li>
-                <li class="comment_list">
-                    <a href="" class="title_author_comment">[ SylvesterNotCute ]</a>
-                    <div class="comment_box">
-                        <p class="text_comment">OwO</p>
-                        <a href="#" class="btn_reply">Reply</a>
-                    </div>
-                </li>
-            </ul>
+                    {% for comment_parent in comments_parent %}
+                        {% if comment.id == comment_parent.parent.id %}
+                            <ul class="comment_list_cildren">
+                                <li class="comment_list">
+                                    <a href="" class="title_author_comment">[ {{comment_parent.user}} ]</a>
+                                    <div class="comment_box">
+                                        <p class="text_comment">{{ comment_parent.context }}</p>
+                                        <a href="#" class="btn_reply">Reply</a>
+                                    </div>
+                                </li>
+                            </ul>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            {% endif %}
         </div>
-    </div>
-    <div class="comment">
-        <a href="" class="title_author_comment">[ SylvesterNotCute ]</a>
-        <div class="comment_box">
-            <p class="text_comment">Nunc ultricies aliquet tellus, non semper urna dapibus id. Donec non est suscipit, efficitur ante sed, tincidunt nisi. Ut scelerisque vitae diam et efficitur. i'm not cute dragofox sniff sniff, i'm not cute dragofox sniff sniff, i'm not cute dragofox sniff sniff, i'm not cute dragofox sniff sniff, i'm not cute dragofox sniff sniff, i'm not cute dragofox sniff sniff</p>
-            <a href="#" class="btn_reply">Reply</a>
-        </div>
-    </div>
+        {% endif %}
+    {% endfor %}
+
     <div class="box_send enable" id="box-send">
         <form action="comments_send" class="form_send">
             <textarea class="comment_input" name="comment" id="" cols="30" rows="10"></textarea>

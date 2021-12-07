@@ -8,7 +8,7 @@ from .models import Levels
 
 def index(request):
     levels_list = Levels.objects.all()
-    paginator = Paginator(levels_list, 24) # levels_list <- передеём список уровней из базы, num - сколоко уровней будет занимать одна страница, default max 30.
+    paginator = Paginator(levels_list, 24)
 
     page_number = request.GET.get('page', 1)
     page = paginator.get_page(page_number)
@@ -25,7 +25,6 @@ def index(request):
     else:
         next_url = ''
 
-
     _context = {
         'levels': page,
         'is_paginated': is_paginated,
@@ -39,8 +38,20 @@ def index(request):
 
 def get_level(request, levels_id):
     level = Levels.objects.get(pk=levels_id)
+    comment = level.comments.all()
+    if comment:
+        level_comment = level.comments.filter(parent=None)
+        comment_parent = level.comments.filter(parent__isnull=False)
+        print(comment_parent)
+        print(level_comment)
+    else:
+        level_comment = None
+        comment_parent = None
+
     _context = {
-        'levels': level, 
+        'levels': level,
+        'comments': level_comment,
+        'comments_parent': comment_parent,
         'title': f'Level Info|{level.name_level}' 
         }
     return render(request, template_name='levels/levels_page.html', context=_context)
