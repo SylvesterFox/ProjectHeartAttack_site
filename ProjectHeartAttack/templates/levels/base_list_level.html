@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+ <main class="main">
+            <div class="container">
+                <div class="main__panel">
+                    <div class="container_panel">
+                        {% block title_panel %} {% endblock title_panel %}
+                        <nav class="nav__panel">
+                            <a href="#" class="nav_panel_link"><span class="ico_panel ico_panel_big"></span></a>
+                            <span class="border_panel">|</span>
+                            <a href="#" class="nav_panel_link"><span class="ico_panel ico_panel_small"></span></a>
+                        </nav>
+                    </div>
+                </div>
+                <div class="main__inner">
+
+                    {% block levels %} {% endblock %}
+
+                </div>
+                <div class="footer_panel"></div>
+            </div>
+ </main>
+{% endblock content %}
+
+
+
+{% block pagenator %}
+
+{% if levels %}
+<footer class="footer footer_fixed lock-padding">
+            <div class="container">
+                <div class="footer_inner">
+                    <nav class="pagenator">
+                            <a href="{{ prev_url }}" class="link_page {% if not prev_url %}disable{% endif %}"><<</a>
+                            <a href="?page={{ back_url }}" class="link_page {% if not prev_url %}disable{% endif %}"><</a>
+                            {% for n in levels.paginator.page_range %}
+                                {% if levels.number == n %}
+                                    <a href="?pege={{ n }}" class="link_page">{{ n }}</a>
+                                {% elif n > levels.number|add:-7 and n < levels.number|add:7 %}
+                                    <a href="?page= {{ n }}" class="link_page">{{ n }}</a>
+                                {% endif %}
+                            {% endfor %}
+                            <a href="?page={{ forward_url }}" class="link_page {% if not next_url %}disable{% endif %}">></a>
+                            <a href="{{ next_url }}" class="link_page {% if not next_url %}disable{% endif %}">>></a>
+                    </nav>
+                </div>
+            </div>
+</footer>
+{% endif %}
+
+{% endblock %}

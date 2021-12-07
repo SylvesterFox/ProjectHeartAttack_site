@@ -395,6 +395,32 @@ body::-webkit-scrollbar{
     margin-left: 15px;
 }
 
+.difficulty_info{
+    width: 190px;
+    height: 20px;
+    position: relative;
+    display: flex;
+    margin-top: 5px;
+    align-items: flex-end;
+
+}
+
+.difficulty_title{
+    position: relative;
+    margin-left: 10px;
+}
+
+.difficulty_levels{
+    position: relative;
+    width: 15px;
+    height: 15px;
+    margin-left: 50px;
+}
+
+.diff{
+    margin: 0;
+}
+
 .level_name{
     width: 190px;
     height: 23px;
@@ -409,20 +435,18 @@ body::-webkit-scrollbar{
     margin-left: 10px;
 }
 
+
 .info_title{
-    display: flex;
-    justify-content: space-evenly;
-    width: 131px;
+    display: block;
+    position: relative;
     height: 15px;
     text-shadow: 0px 6px 7px rgba(0, 0, 0, 0.2);
-    font-size: 16px;
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
+    font-size: 14px;
     line-height: normal;
     letter-spacing: normal;
-    text-align: center;
-    margin-left: 20px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    left: 20px;
 }
 
 .level_container{
@@ -448,54 +472,46 @@ body::-webkit-scrollbar{
     font-style: normal;
     line-height: normal;
     letter-spacing: normal;
-    text-align: center;
-    margin-left: 25px;
+    margin-left: 40px;
     margin-top: 10px;
 }
 
 .rating_ico{
     position: absolute;
     display: block;
-    left: 157px;
     top: 3px;
+    left: 15px;
 }
 
-.difficulty_levels{
-    position: absolute;
-    display: block;
-    width: 20px;
-    height: 15px;
-    left:  163px;
-    top: 5px;
-}
+
 
 .level_info{
     height: 13px;
     width: 180px;
     position: relative;
-    display: flex;
+    display: block;
     justify-content: space-between;
-    margin-top: 10px;
+    margin: 0;
 }
 
 .expert{
-    background-image: url(/img/svg/expert_ico.png);
+    background-color: #FF6D49;
 }
 
 .basic{
-    background-image: url(/img/svg/basic_ico.png);
+    background-color: #3a8cff;
 }
 
 .moderete{
-    background-image: url(/img/svg/moderete_ico.png);
+    background-color: #00CA26;
 }
 
 .advanced{
-    background-image: url(/img/svg/advanced_ico.png);
+    background-color: #FFC700;
 }
 
 .master{
-    background-image: url(/img/svg/master_ico.png);
+    background-color: #FF1FFF;
 }
 
 .level_container:hover{
@@ -554,19 +570,19 @@ body::-webkit-scrollbar{
 }
 
 .ico_panel_big{
-    content: url(/img/svg/big_ico.png);
+    content: url(../img/svg/big_ico.png);
 }
 
 .ico_panel_small{
-    content: url(/img/svg/small_ico.png);
+    content: url(../img/svg/small_ico.png);
 }
 
 .ico_panel_small:hover{
-    content: url(/img/svg/small_ico_b.png);
+    content: url(../img/svg/small_ico_b.png);
 }
 
 .ico_panel_big:hover{
-    content: url(/img/svg/big_ico_b.png);
+    content: url(../img/svg/big_ico_b.png);
 }
 
 .footer_panel{

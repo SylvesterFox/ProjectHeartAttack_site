@@ -1,0 +1,49 @@
+{% extends 'levels\base_list_level.html' %}
+{% load static %}
+
+{% block levels %}
+    {% if levels %}
+    {% for item in levels.object_list %}
+        {% if item.is_published %}
+            <a href="{% url 'level' item.pk %}" class="level_container">
+                <div class="level_preview">
+                        {% if item.preview %}
+                            <img class="img_level" src="{{ item.preview.url }}" alt="paicon">
+                        {% else %}
+                            <img class="img_level" src="{% static 'levels/img/svg/paicon.png' %}" alt="paicon">
+                        {% endif %}
+                        <div class="level_name">[{{ item.name_level }}]</div>
+                        <div class="difficulty_info">
+                            <div class="difficulty_levels {{ item.diffculty }}"></div>
+                            <div class="difficulty_title">
+                                <p class="diff">{{ item.diffculty|capfirst }}</p>
+                            </div>
+                        </div>
+                        <div class="level_info">
+                            <p class="info_title">By:{{ item.author_level|truncatechars:20 }}</p>
+                        </div>
+                        <div class="rating">
+                            <div class="icon_rating">
+                                <img class="rating_ico" src="{% static 'levels/img/svg/heart_ico.png' %}" alt="rating_ico">
+                            </div>
+                            <div class="rating_title">
+                                <p class="rating">Rating: {{ item.rating }}</p>
+                            </div>
+                        </div>
+                </div>
+            </a>
+        {% endif %}
+    {% endfor %}
+{% else %}
+    <div class="not_found_levels">
+        <h1 class="not_found_context">Levels Not Found...</h1>
+    </div>
+{% endif %}
+{% endblock levels %}
+
+{% block title_panel %}
+    <p class="title_page">{{ title_page }}</p>
+{% endblock %}
+
+
+{% block title %} {{title}} {% endblock %}
