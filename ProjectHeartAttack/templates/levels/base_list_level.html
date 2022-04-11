@@ -14,6 +14,11 @@
                         </nav>
                     </div>
                 </div>
+                {% if not levels %}
+                <div class="not_found_levels">
+                    <h1 class="not_found_context">Levels Not Found...</h1>
+                </div>
+                {% endif %}
                 <div class="main__inner">
 
                     {% block levels %} {% endblock %}
@@ -28,26 +33,28 @@
 
 {% block pagenator %}
 
-{% if levels %}
+
 <footer class="footer footer_fixed lock-padding">
             <div class="container">
                 <div class="footer_inner">
-                    <nav class="pagenator">
-                            <a href="{{ prev_url }}" class="link_page {% if not prev_url %}disable{% endif %}"><<</a>
-                            <a href="?page={{ back_url }}" class="link_page {% if not prev_url %}disable{% endif %}"><</a>
-                            {% for n in levels.paginator.page_range %}
-                                {% if levels.number == n %}
-                                    <a href="?pege={{ n }}" class="link_page">{{ n }}</a>
-                                {% elif n > levels.number|add:-7 and n < levels.number|add:7 %}
-                                    <a href="?page= {{ n }}" class="link_page">{{ n }}</a>
-                                {% endif %}
-                            {% endfor %}
-                            <a href="?page={{ forward_url }}" class="link_page {% if not next_url %}disable{% endif %}">></a>
-                            <a href="{{ next_url }}" class="link_page {% if not next_url %}disable{% endif %}">>></a>
-                    </nav>
+                    {% if levels %}
+                        <nav class="pagenator">
+                                <a href="{{ prev_url }}" class="link_page {% if not prev_url %}disable{% endif %}"><<</a>
+                                <a href="?page={{ back_url }}" class="link_page {% if not prev_url %}disable{% endif %}"><</a>
+                                {% for n in levels.paginator.page_range %}
+                                    {% if levels.number == n %}
+                                        <a href="?pege={{ n }}" class="link_page">{{ n }}</a>
+                                    {% elif n > levels.number|add:-7 and n < levels.number|add:7 %}
+                                        <a href="?page= {{ n }}" class="link_page">{{ n }}</a>
+                                    {% endif %}
+                                {% endfor %}
+                                <a href="?page={{ forward_url }}" class="link_page {% if not next_url %}disable{% endif %}">></a>
+                                <a href="{{ next_url }}" class="link_page {% if not next_url %}disable{% endif %}">>></a>
+                        </nav>
+                    {% endif %}
                 </div>
             </div>
 </footer>
-{% endif %}
+
 
 {% endblock %}

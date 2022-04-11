@@ -370,6 +370,16 @@ body::-webkit-scrollbar{
 
 /* Main */
 
+.not_found_levels{
+    display: block;
+    position: absolute;
+    left: 45%;
+    right: 50%;
+    width: 350px;
+    height: 30px;
+    margin-top: 40px;
+}
+
 /* levels preview */
 .main__inner{
     display: grid;

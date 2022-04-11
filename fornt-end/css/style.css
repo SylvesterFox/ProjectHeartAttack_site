@@ -370,6 +370,16 @@ body::-webkit-scrollbar{
 
 /* Main */
 
+.not_found_levels{
+    display: block;
+    position: absolute;
+    left: 45%;
+    right: 50%;
+    width: 350px;
+    height: 30px;
+    margin-top: 40px;
+}
+
 /* levels preview */
 .main__inner{
     display: grid;
@@ -392,7 +402,8 @@ body::-webkit-scrollbar{
 .img_level{
     width: 180px;
     height: 180px;
-    margin-left: 15px;
+    margin-left: 10px;
+    margin-top: 5px;
 }
 
 .difficulty_info{
@@ -408,33 +419,54 @@ body::-webkit-scrollbar{
 .difficulty_title{
     position: relative;
     margin-left: 10px;
+    text-shadow: 0px 6px 7px rgba(0, 0, 0, 0.2);
 }
 
 .difficulty_levels{
     position: relative;
     width: 15px;
     height: 15px;
-    margin-left: 50px;
+    margin-left: 15px;
 }
 
 .diff{
     margin: 0;
 }
 
+.level_preview{
+    width: 200px;
+    height: 300px;
+    background-color: #C4C4C4;
+    border: solid #a5a4a4 2px;
+    transition: .5s;
+}
+
+.level_preview:hover{
+    border-color: #ff0a64;
+}
+
 .level_name{
+    margin: 0;
+    max-height: 38px;
     width: 190px;
     height: 23px;
     text-shadow: 0px 6px 7px rgba(0, 0, 0, 0.2);
-    font-size: 22px;
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: normal;
+    font-size: 19px;
     letter-spacing: normal;
     text-align: center;
-    margin-left: 10px;
+    margin-top: 5px;
+    margin-bottom: 10px;
 }
 
+.level_info{
+    height: 13px;
+    width: 180px;
+    position: relative;
+    display: block;
+    justify-content: space-between;
+    margin-top: 5px;
+    margin-left: 15px;
+}
 
 .info_title{
     display: block;
@@ -444,9 +476,7 @@ body::-webkit-scrollbar{
     font-size: 14px;
     line-height: normal;
     letter-spacing: normal;
-    margin-top: 5px;
-    margin-bottom: 5px;
-    left: 20px;
+    margin: 0;
 }
 
 .level_container{
@@ -456,62 +486,62 @@ body::-webkit-scrollbar{
 }
 
 .rating{
-    height: 13px;
-    width: 170px;
     position: relative;
-    display: block;
+    display: flex;
+    align-items: flex-end;
 }
 
 .rating_title{
     display: block;
-    width: 140px;
-    height: 10px;
-    font-size: 14px;
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: normal;
-    letter-spacing: normal;
-    margin-left: 40px;
-    margin-top: 10px;
-}
-
-.rating_ico{
-    position: absolute;
-    display: block;
-    top: 3px;
-    left: 15px;
-}
-
-
-
-.level_info{
-    height: 13px;
-    width: 180px;
     position: relative;
-    display: block;
-    justify-content: space-between;
+    font-size: 14px;
+}
+
+
+.rating{
     margin: 0;
 }
 
+.icon_rating{
+    width: 24px;
+    height: 24px;
+    position: relative;
+    margin-left: 10px;
+    margin-right: 5px;
+}
+
+.rating_ico{
+    position: relative;
+    display: block;
+    width: 23px;
+    height: 23px;
+}
+
+
+
 .expert{
     background-color: #FF6D49;
+    box-shadow: 0px 6px 7px rgba(0, 0, 0, 0.2);
 }
 
 .basic{
     background-color: #3a8cff;
+    box-shadow: 0px 6px 7px rgba(0, 0, 0, 0.2);
 }
 
-.moderete{
+.moderate{
     background-color: #00CA26;
+    box-shadow: 0px 6px 7px rgba(0, 0, 0, 0.2);
 }
 
 .advanced{
     background-color: #FFC700;
+    box-shadow: 0px 6px 7px rgba(0, 0, 0, 0.2);
 }
 
 .master{
     background-color: #FF1FFF;
+    box-shadow: 0px 6px 7px rgba(0, 0, 0, 0.2);
 }
 
 .level_container:hover{
@@ -570,19 +600,19 @@ body::-webkit-scrollbar{
 }
 
 .ico_panel_big{
-    content: url(../img/svg/big_ico.png);
+    content: url(/fornt-end/img/svg/big_ico.png);
 }
 
 .ico_panel_small{
-    content: url(../img/svg/small_ico.png);
+    content: url(/fornt-end/img/svg/small_ico.png);
 }
 
 .ico_panel_small:hover{
-    content: url(../img/svg/small_ico_b.png);
+    content: url(/fornt-end/img/svg/small_ico_b.png);
 }
 
 .ico_panel_big:hover{
-    content: url(../img/svg/big_ico_b.png);
+    content: url(/fornt-end/img/svg/big_ico_b.png);
 }
 
 .footer_panel{
@@ -628,7 +658,9 @@ body::-webkit-scrollbar{
     margin-top: 24px;
 }
 
+
 .link_page{
+    display: block;
     position: relative;
     width: 23px;
     height: 26px;
@@ -641,14 +673,26 @@ body::-webkit-scrollbar{
     transition: .5s;
 }
 
+.disable{
+    display: none;
+}
+
 .link_page:hover{
     background-color: #fff;
 }
+
+
 
 /* footer end */
 
 
 /* page level start */
+
+.preview_level{
+    height: 600px;
+    max-height: 900px;
+}
+
 
 .preview_inner{
     width: 1210px;
@@ -685,6 +729,7 @@ body::-webkit-scrollbar{
 }
 
 .image_preview_level{
+    display: block;
     width: 217px;
     height: 211px;
 }
@@ -726,7 +771,7 @@ p.difficulty{
     background-color: #FFC700;
 }
 
-.moderete_page {
+.moderate_page {
     background-color: #00CA26;
 }
 
@@ -783,7 +828,7 @@ p.rating_level{
 
 .image_rating{
     position: absolute;
-    content: url(/img/svg/heart_ico.png);
+    content: url(/fornt-end/img/svg/heart_ico.png);
     margin-left: 4px;
 }
 
@@ -801,13 +846,23 @@ p.rating_level{
     margin-bottom: 5px;
 }
 
+.description_block{
+    display: block;
+    position: relative;
+    width: 950px;
+    max-height: 600px;
+    overflow-wrap: break-word;
+}
+
 .text_description{
     margin: 0;
     border-top: solid black 1px;
     border-bottom: solid black 1px;
     padding-top: 10px;
     padding-bottom: 10px;
+    line-height: 20px;
 }
+
 
 .btn_list{
     display: flex;
@@ -906,7 +961,7 @@ p.rating_level{
 }
 
 .icon_send{
-    content: url(/img/svg/send.png);
+    content: url(/fornt-end/img/svg/send.png);
     width: 45px;
     height: 45px;
     margin-left: 15px;
